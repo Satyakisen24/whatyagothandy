@@ -51,19 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set rate: $100/hr inc GST, min $100 callout
     let total = Math.max(1, hours) * 100;
 
-    // Optional parts acquiring: $50/hr
-    if (partsCheckbox && partsCheckbox.checked) {
-      total += 50; // default 1 hour hardware acquiring
-    }
-
     totalDisplay.textContent = `$${total}`;
   }
 
   if (hoursSlider) {
     hoursSlider.addEventListener('input', calculateEstimate);
-  }
-  if (partsCheckbox) {
-    partsCheckbox.addEventListener('change', calculateEstimate);
   }
   calculateEstimate();
 

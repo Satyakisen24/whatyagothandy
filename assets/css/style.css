@@ -218,7 +218,13 @@ ul, ol {
   .nav-desktop {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-desktop {
+    gap: 24px;
   }
 }
 
@@ -228,6 +234,7 @@ ul, ol {
   color: var(--text-main);
   position: relative;
   padding: 6px 0;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -248,7 +255,8 @@ ul, ol {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .btn-phone-header {
@@ -262,12 +270,17 @@ ul, ol {
     gap: 8px;
     background: var(--surface-alt);
     border: 1.5px solid var(--surface-border-strong);
-    padding: 9px 16px;
+    padding: 8px 14px;
     border-radius: var(--radius-full);
     font-weight: 700;
     color: var(--primary);
     font-size: 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: all var(--transition-fast);
+  }
+  .btn-phone-header span {
+    white-space: nowrap;
   }
   .btn-phone-header:hover {
     border-color: var(--accent);
@@ -616,11 +629,14 @@ ul, ol {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 768px) {
   .pricing-hero-strip {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
 }
